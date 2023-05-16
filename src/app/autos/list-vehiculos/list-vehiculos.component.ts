@@ -8,7 +8,9 @@ import {VehiculosService} from "../service/vehiculos.service";
   styleUrls: ['./list-vehiculos.component.css']
 })
 export class ListVehiculosComponent implements OnInit{
-   public vehiculos: Array<Vehiculo> = [];
+  public vehiculos: Array<Vehiculo> = [];
+  public vehiculoSelected!: Vehiculo;
+  public selected: boolean = false;
 
    constructor(private vehiculosService: VehiculosService) {
    }
@@ -23,5 +25,10 @@ export class ListVehiculosComponent implements OnInit{
 
   ngOnInit(): void {
      this.getVehiculos();
+  }
+
+  onSelected(vehiculo: Vehiculo) {
+     this.selected=true;
+     this.vehiculoSelected = vehiculo;
   }
 }
