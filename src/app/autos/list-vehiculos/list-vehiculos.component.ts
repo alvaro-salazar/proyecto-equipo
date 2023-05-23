@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Vehiculo} from "../model/vehiculo";
 import {VehiculosService} from "../service/vehiculos.service";
+import swal from "sweetalert2";
 
 @Component({
   selector: 'app-list-vehiculos',
@@ -30,5 +31,6 @@ export class ListVehiculosComponent implements OnInit{
   onSelected(vehiculo: Vehiculo) {
      this.selected=true;
      this.vehiculoSelected = vehiculo;
+     swal.fire('Any fool can use a computer');
   }
 }
